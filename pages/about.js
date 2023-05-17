@@ -7,18 +7,18 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Index!!</title>
+        <title>About!!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Index.js
+          ABOUT.js
         </h1>
 
         <p className={styles.description}>
           Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+          <code className={styles.code}>pages/about.js</code>
         </p>
 
         <TopLinks />
