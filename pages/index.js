@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Index!TEST!COMMIT!!how?</title>
+        <title>Index!TEST!COMMIT!!how?now,who user?</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Main page="index"></Main>
