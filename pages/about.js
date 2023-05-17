@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { Footer } from '../components/Footer'
-import { TopLinks } from '../components/TopLinks'
-import { Headlines } from '../components/Headdline'
+import { Main } from '../components/Main'
 
 export default function Home() {
   return (
@@ -12,11 +11,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <Headlines page="about"/>
-
-        <TopLinks />
-      </main>
+      <Main page="about"></Main>
 
     <Footer />
     </div>
