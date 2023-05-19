@@ -7,12 +7,22 @@ import { useCallback, useEffect, useState } from 'react'
 
 export default function Home() {
   const [cnt, setCnt] = useState(1)
+  const [txt, setTxt] = useState('')
+  const [isVisible, setIsVisible] = useState(true)
 
   const handleClick = useCallback((e) => { // useCallbackで再レンダリングを防ぐ、第二引数入れないとダメ！
     if (cnt < 10) {
       setCnt(cnt => cnt + 1)
     }
   }, [cnt]) // 第二引数で、レンダリングする必要のある変数を指定する
+
+  const handleChange = useCallback((e) => {
+      setTxt(e.target.value.trim())
+  }, [txt])
+
+  const handleBtnVisible = useCallback((e) => {
+    setIsVisible((isVisible) => !isVisible)
+  }, [])
 
   useEffect(() => { // mount際に効く
     document.body.style.backgroundColor = "lightblue"
@@ -24,12 +34,16 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Header></Header>
-        <h1>{cnt}</h1>
+        { isVisible ? <h1>{cnt}</h1> : null}
         <button
           onClick={handleClick}
         >
         ボタン
         </button>
+        <button onClick={handleBtnVisible}>
+            {isVisible ? "表示" : "非表示"}
+          </button>
+        <input type="text" value={txt} onChange={handleChange} />
       <Head>
         <title>Index!TEST!COMMIT!!how?now,who user?</title>
       </Head>
