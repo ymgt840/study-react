@@ -8,16 +8,18 @@ import { useCallback, useEffect, useState } from 'react'
 export default function Home() {
   const [cnt, setCnt] = useState(1)
 
-  const handleClick = useCallback((e) => { // useCallbackで再レンダリングを防ぐ
-    setCnt(cnt => cnt + 1)
-  }, [])
+  const handleClick = useCallback((e) => { // useCallbackで再レンダリングを防ぐ、第二引数入れないとダメ！
+    if (cnt < 10) {
+      setCnt(cnt => cnt + 1)
+    }
+  }, [cnt]) // 第二引数で、レンダリングする必要のある変数を指定する
 
   useEffect(() => { // mount際に効く
     document.body.style.backgroundColor = "lightblue"
     return () => { // unmount
       document.body.style.backgroundColor = ""
     }
-  }, [])  
+  }, [])
 
   return (
     <div className={styles.container}>
