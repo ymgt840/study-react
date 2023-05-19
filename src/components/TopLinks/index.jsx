@@ -1,4 +1,4 @@
-import classes from './TopLinks.module.css'
+import classes from 'src/components/TopLinks/TopLinks.module.css'
 
 const ITEMS = [
   { href: "https://nextjs.org/docs", title: "Documentation \u2192", description: "Find in-depth information about Next.js features and API."},
