@@ -30,22 +30,20 @@ export default function Home() {
       document.body.style.backgroundColor = ""
     }
   }, [])
-
+  // https://www.youtube.com/watch?v=STUaBcp5ft4
   return (
     <div className={styles.container}>
       <Header></Header>
         { isVisible ? <h1>{cnt}</h1> : null}
-        <button
-          onClick={handleClick}
-        >
-        ボタン
+        <button onClick={handleClick}>
+          ボタン
         </button>
         <button onClick={handleBtnVisible}>
-            {isVisible ? "表示" : "非表示"}
-          </button>
+          {isVisible ? "表示" : "非表示"}
+        </button>
         <input type="text" value={txt} onChange={handleChange} />
       <Head>
-        <title>Index!TEST!COMMIT!!how?now,who user?</title>
+        <title>Index!</title>
       </Head>
       <Main page="index"></Main>
     <Footer />
