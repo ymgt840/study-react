@@ -25,27 +25,46 @@ export default function Home() {
     setIsVisible((prevIsVisible) => !prevIsVisible)
   }, [])
 
+  const handleAdd = useCallback((e) => {
+    setArray((prevArray) => {
+      if (prevArray.some(item => item === txt)) {
+        alert("same elem!! STOP!!")
+        return prevArray;
+      }
+      const newArray = [...prevArray, txt] // 破壊的メソッドを使わない. pushの代わり
+      return newArray
+    })
+    }, [txt])
+
   useEffect(() => { // mount際に効く
     document.body.style.backgroundColor = "lightblue"
     return () => { // unmount
       document.body.style.backgroundColor = ""
     }
   }, [])
-  // https://www.youtube.com/watch?v=STUaBcp5ft4
+  
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Index!</title>
+      </Head>
       <Header></Header>
         { isVisible ? <h1>{cnt}</h1> : null}
         <button onClick={handleClick}>
           ボタン
         </button>
         <button onClick={handleBtnVisible}>
-          {isVisible ? "表示" : "非表示"}
+          {isVisible ? "非表示" : "表示"}
         </button>
         <input type="text" value={txt} onChange={handleChange} />
-      <Head>
-        <title>Index!</title>
-      </Head>
+        <button onClick={handleAdd}>追加</button>
+      <ul>
+        {array.map((item) => {
+          return (
+            <li key={item}>{item}</li>
+          )
+        })}
+      </ul>
       <Main page="index"></Main>
     <Footer />
     </div>
