@@ -9,10 +9,11 @@ export default function Home() {
   const [cnt, setCnt] = useState(1)
   const [txt, setTxt] = useState('')
   const [isVisible, setIsVisible] = useState(true)
+  const [array, setArray] = useState([])
 
   const handleClick = useCallback((e) => { // useCallbackで再レンダリングを防ぐ、第二引数入れないとダメ！
     if (cnt < 10) {
-      setCnt(cnt => cnt + 1)
+      setCnt(prevCnt => prevCnt + 1)
     }
   }, [cnt]) // 第二引数で、レンダリングする必要のある変数を指定する
 
@@ -21,7 +22,7 @@ export default function Home() {
   }, [txt])
 
   const handleBtnVisible = useCallback((e) => {
-    setIsVisible((isVisible) => !isVisible)
+    setIsVisible((prevIsVisible) => !prevIsVisible)
   }, [])
 
   useEffect(() => { // mount際に効く
