@@ -3,15 +3,9 @@ import styles from 'src/styles/Home.module.css'
 import { Footer } from 'src/components/Footer'
 import { Main } from 'src/components/Main'
 import { Header } from 'src/components/Header'
-import { useCounter } from 'src/hooks/useCounter'
-import { useHandleArray } from 'src/hooks/useHandleArray'
-import { useBgLightBlue } from 'src/hooks/useBgLightBlue'
 
-export default function Home() {
-  const {cnt, isVisible, handleClick, handleBtnVisible} = useCounter()
-  const {txt, array, handleChange, handleAdd} = useHandleArray()
-  useBgLightBlue()
-
+export default function Home(props) {
+  const {cnt, isVisible, handleClick, handleBtnVisible, txt, array, handleChange, handleAdd} = props
   return (
     <div className={styles.container}>
       <Head>
