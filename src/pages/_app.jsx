@@ -4,7 +4,8 @@ import { useCounter } from 'src/hooks/useCounter'
 import { useHandleArray } from 'src/hooks/useHandleArray'
 import { useBgColor } from 'src/hooks/useBgColor'
 
-function MyApp({ Component, pageProps }) {
+//function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }) => { // アロー関数で書き換え
   // stateのリフトアップ (pages全体で状態を共有する)
   const counter = useCounter()
   const handleArray = useHandleArray()

@@ -10,7 +10,7 @@ export const useHandleArray = () => {
 
   const handleAdd = useCallback((e) => {
     setArray((prevArray) => {
-      if (prevArray.some(item => item === txt)) {
+      if (prevArray.includes(txt)) {
         alert("same elem!! STOP!!")
         return prevArray;
       }

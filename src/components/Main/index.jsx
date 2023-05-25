@@ -3,7 +3,7 @@ import { Headlines } from 'src/components/Headline'
 import { TopLinks } from 'src/components/TopLinks'
 import { useCallback, useState } from 'react'
 
-export function Main(props) {
+export const Main = (props) => {
   const ITEMS = [ // itemsを function内で定義する
     { href: "https://nextjs.org/docs", title: "Documentation \u2192", description: "Find in-depth information about Next.js features and API."},
     { href: "https://nextjs.org/learn", title: "Learn \u2192", description: "Learn about Next.js in an interactive course with quizzes!"},
