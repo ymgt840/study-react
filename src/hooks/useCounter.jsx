@@ -1,9 +1,13 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 
 export const useCounter = () => {
   const [cnt, setCnt] = useState(1)
   const [isVisible, setIsVisible] = useState(true)
   
+  const doubleCount = useMemo(() => { // useCallBackと同じ考え方. 新たに生成されない
+    return cnt * 2
+  }, [cnt])
+
   const handleClick = useCallback((e) => { // useCallbackで再レンダリングを防ぐ、第二引数入れないとダメ！
     if (cnt < 10) {
       setCnt(prevCnt => prevCnt + 1)
@@ -14,5 +18,5 @@ export const useCounter = () => {
     setIsVisible((prevIsVisible) => !prevIsVisible)
   }, [])
 
-  return {cnt, isVisible, handleClick, handleBtnVisible}
+  return {cnt, isVisible, handleClick, handleBtnVisible, doubleCount}
 }
