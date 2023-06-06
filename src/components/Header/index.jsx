@@ -4,7 +4,7 @@ import classes from 'src/components/Header/Header.module.css'
 const NAV_ITEMS = [
     {href: "/", label: "Index"},
     {href: "/about", label: "About"},
-    {href: "/test", label: "test"},
+    {href: "/hooks", label: "hooks"},
 ]
 
 export const Header = () => {

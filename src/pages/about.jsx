@@ -26,7 +26,6 @@ const About = (props) => {
         })}
       </ul>
       <Main page="about"></Main>
-
     <Footer />
     </div>
   )
